@@ -1,0 +1,1135 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Beauty Center | Güzelliğinize Terapi Etkisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-powder': '#F4E8EB',
+                        'rose-nude': '#E8D5C4',
+                        'champagne': '#D4AF37',
+                        'rose-gold': '#E0A96D',
+                        'anthracite': '#2B232A',
+                        'cream': '#FAFAFA',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAFAFA; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-gold { animation: pulse-gold 2s infinite; }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        /* Hero gradient overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(43, 35, 42, 0.7) 0%, rgba(43, 35, 42, 0.3) 50%, rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        /* Shimmer effect */
+        .shimmer-text {
+            background: linear-gradient(90deg, #D4AF37, #E0A96D, #D4AF37, #E0A96D);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Card hover effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Navbar */
+        .navbar-scrolled {
+            background: rgba(250, 250, 250, 0.95) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        /* Review card */
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Instagram grid hover */
+        .insta-item {
+            transition: all 0.3s ease;
+        }
+        .insta-item:hover {
+            transform: scale(1.05);
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* Gold border animation */
+        .gold-border {
+            position: relative;
+        }
+        .gold-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #D4AF37, #E0A96D);
+            transition: width 0.3s ease;
+        }
+        .gold-border:hover::after {
+            width: 100%;
+        }
+
+        /* WhatsApp pulse */
+        .whatsapp-pulse {
+            animation: pulse-gold 2s infinite;
+        }
+
+        /* Section divider */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #E0A96D);
+            margin: 0 auto;
+        }
+
+        /* Testimonial slider */
+        .testimonial-track {
+            transition: transform 0.5s ease;
+        }
+
+        /* Mobile bottom bar */
+        .mobile-bottom-bar {
+            backdrop-filter: blur(20px);
+            background: rgba(250, 250, 250, 0.95);
+        }
+
+        /* Image reveal */
+        .img-reveal {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1s ease;
+        }
+        .img-reveal.revealed {
+            clip-path: inset(0 0 0 0);
+        }
+
+        /* Smooth section transitions */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Nav link active state */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-cream text-anthracite overflow-x-hidden">
+
+    <!-- HEADER / NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-champagne to-rose-gold flex items-center justify-center">
+                        <i class="fas fa-spa text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-lg md:text-xl font-semibold text-anthracite group-hover:text-champagne transition-colors">Therapy</span>
+                        <span class="hidden sm:inline text-xs text-rose-gold block -mt-1 tracking-widest uppercase">Beauty Center</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#hakkimizda" class="nav-link text-sm font-medium text-anthracite hover:text-champagne transition-colors">Hakkımızda</a>
+                    <a href="#hizmetler" class="nav-link text-sm font-medium text-anthracite hover:text-champagne transition-colors">Hizmetler</a>
+                    <a href="#instagram" class="nav-link text-sm font-medium text-anthracite hover:text-champagne transition-colors">Instagram</a>
+                    <a href="#yorumlar" class="nav-link text-sm font-medium text-anthracite hover:text-champagne transition-colors">Müşteri Yorumları</a>
+                    <a href="#iletisim" class="nav-link text-sm font-medium text-anthracite hover:text-champagne transition-colors">İletişim</a>
+                </nav>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="w-10 h-10 rounded-full border-2 border-champagne/30 flex items-center justify-center text-champagne hover:bg-champagne hover:text-white transition-all duration-300">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/5069368972" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-champagne to-rose-gold text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-champagne/30 transition-all duration-300 hover:scale-105">
+                        <i class="fab fa-whatsapp text-base"></i>
+                        <span>Randevu Al</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center text-anthracite">
+                    <i class="fas fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-rose-powder/30">
+            <div class="px-4 py-6 space-y-4 mobile-menu">
+                <a href="#hakkimizda" class="block text-base font-medium text-anthracite hover:text-champagne py-2" onclick="closeMobileMenu()">Hakkımızda</a>
+                <a href="#hizmetler" class="block text-base font-medium text-anthracite hover:text-champagne py-2" onclick="closeMobileMenu()">Hizmetler</a>
+                <a href="#instagram" class="block text-base font-medium text-anthracite hover:text-champagne py-2" onclick="closeMobileMenu()">Instagram</a>
+                <a href="#yorumlar" class="block text-base font-medium text-anthracite hover:text-champagne py-2" onclick="closeMobileMenu()">Müşteri Yorumları</a>
+                <a href="#iletisim" class="block text-base font-medium text-anthracite hover:text-champagne py-2" onclick="closeMobileMenu()">İletişim</a>
+                <div class="flex gap-3 pt-4 border-t border-rose-powder/30">
+                    <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 border-champagne text-champagne font-semibold text-sm hover:bg-champagne hover:text-white transition-all">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://wa.me/5069368972" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-r from-champagne to-rose-gold text-white font-semibold text-sm">
+                        <i class="fab fa-whatsapp"></i> Randevu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://www.designarena.ai/u/92472b6d-5334-4a28-a7f5-1939288c2b21" alt="Therapy Beauty Center Salon" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-32 h-32 rounded-full bg-champagne/10 blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-48 h-48 rounded-full bg-rose-powder/20 blur-3xl animate-float" style="animation-delay: 1s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="animate-fade-in-up opacity-0" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+                        <span class="text-white/90 text-sm font-medium tracking-wide">Profesyonel Güzellik & Bakım Stüdyosu</span>
+                    </div>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up opacity-0" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+                    Ruhunuza Ve<br>
+                    <span class="shimmer-text">Güzelliğinize</span><br>
+                    Terapi Etkisi
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-white/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-xl animate-fade-in-up opacity-0" style="animation-delay: 0.6s; animation-fill-mode: forwards;">
+                    Özel nail art tasarımları, profesyonel cilt bakımı, protez tırnak ve kişiye özel estetik uygulamalarımızla kendinizi şımartın.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 animate-fade-in-up opacity-0" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+                    <a href="https://wa.me/5069368972" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-champagne to-rose-gold text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-2xl hover:shadow-champagne/40 transition-all duration-300 hover:scale-105 animate-pulse-gold">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>WhatsApp Randevu</span>
+                    </a>
+                    <a href="#hizmetler" class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 transition-all duration-300">
+                        <span>Hizmetleri Keşfet</span>
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-8 mt-12 animate-fade-in-up opacity-0" style="animation-delay: 1s; animation-fill-mode: forwards;">
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-champagne">500+</div>
+                        <div class="text-white/60 text-sm">Mutlu Müşteri</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-champagne">5★</div>
+                        <div class="text-white/60 text-sm">Google Puanı</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-champagne">10+</div>
+                        <div class="text-white/60 text-sm">Uzman Hizmet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+                <div class="w-1 h-2 rounded-full bg-champagne animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA & İÇERİK BÖLÜMÜ -->
+    <section id="hakkimizda" class="py-20 md:py-28 bg-cream relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-rose-powder/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-champagne/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-section">
+                <span class="inline-block text-champagne text-sm font-semibold tracking-widest uppercase mb-3">Hakkımızda</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-anthracite mb-4">Konforlu & Huzurlu<br>Bir Salon Deneyimi</h2>
+                <div class="section-divider mt-4"></div>
+                <p class="mt-6 text-anthracite/70 max-w-2xl mx-auto text-base leading-relaxed">
+                    Therapy Beauty Center olarak, her müşterimize kişiye özel bir güzellik deneyimi sunuyoruz. Hijyenik ortamımız, uzman kadromuz ve premium ürünlerimizle kendinizi özel hissedin.
+                </p>
+            </div>
+
+            <!-- Image + Text Layout -->
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 reveal-section">
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://www.designarena.ai/u/92472b6d-5334-4a28-a7f5-1939288c2b21" alt="Therapy Beauty Center Salon Interior" class="w-full h-[400px] md:h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-anthracite/20 to-transparent"></div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 md:bottom-8 md:-right-8 bg-white rounded-2xl shadow-xl p-4 md:p-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-champagne to-rose-gold flex items-center justify-center">
+                                <i class="fas fa-award text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-serif font-bold text-anthracite text-lg">Premium</div>
+                                <div class="text-xs text-anthracite/60">Kalite Garantisi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-anthracite mb-6">Neden Therapy Beauty Center?</h3>
+                    <p class="text-anthracite/70 leading-relaxed mb-8">
+                        Salonumuz, stresli günlük hayatınızdan uzaklaşıp kendinize zaman ayırabileceğiniz bir terapi alanı olarak tasarlandı. Her detayda konfor, hijyen ve estetik ön plandadır. Uzman ekibimiz, en son teknikleri ve premium ürünleri kullanarak size en iyi sonucu sunar.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-rose-powder flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-champagne text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-anthracite">Steril & Hijyenik Ortam</div>
+                                <div class="text-sm text-anthracite/60">Tek kullanımlık malzemeler ve profesyonel sterilizasyon</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-rose-powder flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-champagne text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-anthracite">Kişiye Özel Tasarım</div>
+                                <div class="text-sm text-anthracite/60">Her müşteri için özel nail art ve bakım planı</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-rose-powder flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-champagne text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-anthracite">Uzman Kadro</div>
+                                <div class="text-sm text-anthracite/60">Sertifikalı ve deneyimli güzellik uzmanları</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Feature Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-section">
+                <div class="feature-card bg-white rounded-2xl p-6 md:p-8 text-center border border-rose-powder/50">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                        <i class="fas fa-heart text-champagne text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-anthracite mb-2">Kişiye Özel</h4>
+                    <p class="text-sm text-anthracite/60 leading-relaxed">Her müşterimizin ihtiyaçlarına göre özelleştirilmiş bakım planları oluşturuyoruz.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 md:p-8 text-center border border-rose-powder/50">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-champagne text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-anthracite mb-2">Hijyenik</h4>
+                    <p class="text-sm text-anthracite/60 leading-relaxed">En yüksek hijyen standartlarında, steril ortamda hizmet veriyoruz.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 md:p-8 text-center border border-rose-powder/50">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                        <i class="fas fa-gem text-champagne text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-anthracite mb-2">Premium</h4>
+                    <p class="text-sm text-anthracite/60 leading-relaxed">Sadece en kaliteli ve güvenilir markaların ürünlerini kullanıyoruz.</p>
+                </div>
+
+                <div class="feature-card bg-white rounded-2xl p-6 md:p-8 text-center border border-rose-powder/50">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                        <i class="fas fa-clock text-champagne text-2xl"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-anthracite mb-2">Randevulu</h4>
+                    <p class="text-sm text-anthracite/60 leading-relaxed">Randevu sistemi ile bekleme süresi olmadan, zamanınıza değer veriyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HİZMETLERİMİZ BÖLÜMÜ -->
+    <section id="hizmetler" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-1/2 left-0 w-64 h-64 bg-rose-powder/20 rounded-full blur-3xl -translate-y-1/2"></div>
+        <div class="absolute top-1/4 right-0 w-48 h-48 bg-champagne/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-section">
+                <span class="inline-block text-champagne text-sm font-semibold tracking-widest uppercase mb-3">Hizmetlerimiz</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-anthracite mb-4">Sunduğumuz<br>Hizmetler</h2>
+                <div class="section-divider mt-4"></div>
+                <p class="mt-6 text-anthracite/70 max-w-2xl mx-auto text-base leading-relaxed">
+                    Güzellik ve bakım ihtiyaçlarınız için kapsamlı hizmet yelpazemizle yanınızdayız.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-section">
+                <!-- Service 1 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-hand-sparkles text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Nail Art & Manikür</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">El ve ayak bakımınız, kişiye özel nail art tasarımlarıyla taçlandırılır. Trend ve klasik desenler arasından seçim yapın.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-fingerprint text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Protez Tırnak</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">Jel, akrilik ve fiber protez tırnak uygulamaları. Doğal görünümlü, uzun ömürlü ve estetik sonuçlar.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-spa text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Cilt Bakımı</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">Profesyonel yüz bakımı, temizleme, nemlendirme ve anti-aging uygulamaları. Cildinize özel bakım programı.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-eye text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Kaş & Kirpik</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">Kaş tasarımı, laminasyon, kirpik lifting ve Extensions uygulamaları. Doğal ve etkileyici bakışlar.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paint-brush text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Gelin Paketi</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">Özel gününüz için kapsamlı güzellik paketi. Tırnak, cilt bakımı ve makyaj hizmetleri bir arada.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-cream rounded-2xl p-8 border border-rose-powder/30 group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-champagne/20 to-rose-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-magic text-champagne text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-anthracite mb-3">Estetik Uygulamalar</h3>
+                    <p class="text-anthracite/60 text-sm leading-relaxed mb-4">Kişiye özel estetik dokunuşlar. Profesyonel ekipman ve ürünlerle güvenli, etkili sonuçlar.</p>
+                    <a href="https://wa.me/5069368972" class="inline-flex items-center gap-2 text-champagne text-sm font-semibold hover:gap-3 transition-all">
+                        Randevu Al <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM AKIŞI -->
+    <section id="instagram" class="py-20 md:py-28 bg-cream relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white to-cream"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-section">
+                <span class="inline-block text-champagne text-sm font-semibold tracking-widest uppercase mb-3">Instagram</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-anthracite mb-4">Son Tasarımlarımız</h2>
+                <div class="section-divider mt-4"></div>
+                <p class="mt-6 text-anthracite/70 max-w-2xl mx-auto text-base leading-relaxed">
+                    Instagram hesabımızda en son nail art tasarımlarımızı ve çalışmalarımızı takip edebilirsiniz.
+                </p>
+            </div>
+
+            <!-- Instagram Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12 reveal-section">
+                <div class="insta-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer group">
+                    <img src="https://www.designarena.ai/u/92472b6d-5334-4a28-a7f5-1939288c2b21" alt="Nail Art Design 1" class="w-full h-full object-cover">
+                    <div class="insta-overlay absolute inset-0 bg-anthracite/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="insta-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer group bg-rose-powder">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="text-center p-4">
+                            <i class="fas fa-hand-sparkles text-champagne text-4xl mb-3"></i>
+                            <p class="text-anthracite/70 text-sm font-medium">Nail Art</p>
+                        </div>
+                    </div>
+                    <div class="insta-overlay absolute inset-0 bg-anthracite/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="insta-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer group bg-rose-nude/50">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="text-center p-4">
+                            <i class="fas fa-spa text-champagne text-4xl mb-3"></i>
+                            <p class="text-anthracite/70 text-sm font-medium">Cilt Bakımı</p>
+                        </div>
+                    </div>
+                    <div class="insta-overlay absolute inset-0 bg-anthracite/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="insta-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer group bg-gradient-to-br from-champagne/20 to-rose-gold/20">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="text-center p-4">
+                            <i class="fas fa-gem text-champagne text-4xl mb-3"></i>
+                            <p class="text-anthracite/70 text-sm font-medium">Protez Tırnak</p>
+                        </div>
+                    </div>
+                    <div class="insta-overlay absolute inset-0 bg-anthracite/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center reveal-section">
+                <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-anthracite to-anthracite/80 text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <i class="fab fa-instagram text-xl"></i>
+                    <span>@therapy_nailart</span>
+                    <span class="text-white/60 text-sm">Takip Et</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÜŞTERİ YORUMLARI -->
+    <section id="yorumlar" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-rose-powder/20 rounded-full blur-3xl -translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-section">
+                <span class="inline-block text-champagne text-sm font-semibold tracking-widest uppercase mb-3">Müşteri Yorumları</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-anthracite mb-4">Google Değerlendirmeleri</h2>
+                <div class="section-divider mt-4"></div>
+                <div class="mt-6 flex items-center justify-center gap-2">
+                    <div class="flex text-champagne">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="font-serif text-2xl font-bold text-anthracite">5.0</span>
+                    <span class="text-anthracite/60 text-sm">/ 5.0</span>
+                </div>
+            </div>
+
+            <!-- Reviews Slider -->
+            <div class="relative reveal-section">
+                <div class="overflow-hidden">
+                    <div class="testimonial-track flex" id="testimonialTrack">
+                        <!-- Review 1 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                            <div class="review-card bg-cream rounded-2xl p-6 md:p-8 border border-rose-powder/30 h-full">
+                                <div class="flex text-champagne mb-4 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-anthracite/70 text-sm leading-relaxed mb-6">"Harika bir salon! Nail art tasarımları muhteşem, hijyen konusunda çok titizler. Kesinlikle tekrar geleceğim."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                                        <span class="font-serif font-bold text-champagne text-sm">A</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-anthracite text-sm">Ayşe K.</div>
+                                        <div class="text-xs text-anthracite/50">Google Yorumu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                            <div class="review-card bg-cream rounded-2xl p-6 md:p-8 border border-rose-powder/30 h-full">
+                                <div class="flex text-champagne mb-4 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-anthracite/70 text-sm leading-relaxed mb-6">"Protez tırnak yaptırdım, doğal görünümlü ve çok dayanıklı. Personel çok ilgili ve profesyonel. Teşekkürler!"</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                                        <span class="font-serif font-bold text-champagne text-sm">M</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-anthracite text-sm">Merve D.</div>
+                                        <div class="text-xs text-anthracite/50">Google Yorumu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                            <div class="review-card bg-cream rounded-2xl p-6 md:p-8 border border-rose-powder/30 h-full">
+                                <div class="flex text-champagne mb-4 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-anthracite/70 text-sm leading-relaxed mb-6">"Cilt bakımı için geldim, sonuç mükemmel! Salon çok temiz ve ferah. Kendimi gerçekten şımartılmış hissettim."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                                        <span class="font-serif font-bold text-champagne text-sm">Z</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-anthracite text-sm">Zeynep A.</div>
+                                        <div class="text-xs text-anthracite/50">Google Yorumu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                            <div class="review-card bg-cream rounded-2xl p-6 md:p-8 border border-rose-powder/30 h-full">
+                                <div class="flex text-champagne mb-4 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-anthracite/70 text-sm leading-relaxed mb-6">"Gelin paketi için tercih ettim, her şey kusursuzdu. Tırnaklarım ve cilt bakımım harika oldu. Çok memnunum!"</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                                        <span class="font-serif font-bold text-champagne text-sm">S</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-anthracite text-sm">Selin Y.</div>
+                                        <div class="text-xs text-anthracite/50">Google Yorumu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 5 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                            <div class="review-card bg-cream rounded-2xl p-6 md:p-8 border border-rose-powder/30 h-full">
+                                <div class="flex text-champagne mb-4 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-anthracite/70 text-sm leading-relaxed mb-6">"Kaş laminasyonu yaptırdım, sonuç beklentimin çok üstünde. Ortam çok huzurlu, terapi gibi hissediyorsunuz."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-powder to-rose-nude flex items-center justify-center">
+                                        <span class="font-serif font-bold text-champagne text-sm">E</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-anthracite text-sm">Elif T.</div>
+                                        <div class="text-xs text-anthracite/50">Google Yorumu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-champagne/30 flex items-center justify-center text-champagne hover:bg-champagne hover:text-white transition-all">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="flex gap-2" id="sliderDots">
+                        <button class="slider-dot w-3 h-3 rounded-full bg-champagne transition-all" data-index="0"></button>
+                        <button class="slider-dot w-3 h-3 rounded-full bg-rose-powder transition-all" data-index="1"></button>
+                        <button class="slider-dot w-3 h-3 rounded-full bg-rose-powder transition-all" data-index="2"></button>
+                    </div>
+                    <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-champagne/30 flex items-center justify-center text-champagne hover:bg-champagne hover:text-white transition-all">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 md:py-28 bg-gradient-to-br from-anthracite via-anthracite to-anthracite/95 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-champagne/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-rose-gold/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal-section">
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Kendinize Bir Terapi<br><span class="shimmer-text">Hediye Edin</span></h2>
+            <p class="text-white/70 text-base md:text-lg mb-8 max-w-xl mx-auto">Hemen WhatsApp üzerinden randevu alın, güzelliğinize profesyonel dokunuşları keşfedin.</p>
+            <a href="https://wa.me/5069368972" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-champagne to-rose-gold text-white px-10 py-5 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-champagne/30 transition-all duration-300 hover:scale-105 animate-pulse-gold">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span>Hemen Randevu Al</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="iletisim" class="bg-anthracite text-white pt-16 pb-8 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-champagne to-rose-gold flex items-center justify-center">
+                            <i class="fas fa-spa text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <span class="font-serif text-lg font-semibold">Therapy</span>
+                            <span class="text-xs text-rose-gold block -mt-1 tracking-widest uppercase">Beauty Center</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-4">Güzelliğinize ve ruhunuza terapi etkisi sunan premium güzellik stüdyosu.</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-champagne transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5069368972" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-green-500 transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-4">Hızlı Linkler</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#hakkimizda" class="text-white/60 text-sm hover:text-champagne transition-colors">Hakkımızda</a></li>
+                        <li><a href="#hizmetler" class="text-white/60 text-sm hover:text-champagne transition-colors">Hizmetler</a></li>
+                        <li><a href="#instagram" class="text-white/60 text-sm hover:text-champagne transition-colors">Instagram</a></li>
+                        <li><a href="#yorumlar" class="text-white/60 text-sm hover:text-champagne transition-colors">Müşteri Yorumları</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-4">Hizmetler</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-white/60 text-sm">Nail Art & Manikür</span></li>
+                        <li><span class="text-white/60 text-sm">Protez Tırnak</span></li>
+                        <li><span class="text-white/60 text-sm">Cilt Bakımı</span></li>
+                        <li><span class="text-white/60 text-sm">Kaş & Kirpik</span></li>
+                        <li><span class="text-white/60 text-sm">Gelin Paketi</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-4">İletişim</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-champagne mt-1 text-sm"></i>
+                            <span class="text-white/60 text-sm">Therapy Nail Art Salonu</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone text-champagne mt-1 text-sm"></i>
+                            <a href="https://wa.me/5069368972" class="text-white/60 text-sm hover:text-champagne transition-colors">0506 936 89 72</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-instagram text-champagne mt-1 text-sm"></i>
+                            <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="text-white/60 text-sm hover:text-champagne transition-colors">@therapy_nailart</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock text-champagne mt-1 text-sm"></i>
+                            <span class="text-white/60 text-sm">Pzt - Cmt: 09:00 - 19:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-white/40 text-sm text-center md:text-left">© 2024 Therapy Beauty Center. Tüm hakları saklıdır.</p>
+                    <p class="text-white/40 text-sm">💛 Sevgiyle tasarlandı</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SABİT MOBİL ALT BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden mobile-bottom-bar border-t border-rose-powder/30 shadow-lg shadow-anthracite/10">
+        <div class="flex items-center justify-around py-3 px-4">
+            <a href="https://wa.me/5069368972" target="_blank" class="flex flex-col items-center gap-1 text-green-600">
+                <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/30">
+                    <i class="fab fa-whatsapp text-white text-lg"></i>
+                </div>
+                <span class="text-[10px] font-semibold">WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/therapy_nailart" target="_blank" class="flex flex-col items-center gap-1">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center shadow-lg shadow-pink-500/30">
+                    <i class="fab fa-instagram text-white text-lg"></i>
+                </div>
+                <span class="text-[10px] font-semibold text-anthracite">Instagram</span>
+            </a>
+            <a href="#iletisim" class="flex flex-col items-center gap-1">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-champagne to-rose-gold flex items-center justify-center shadow-lg shadow-champagne/30">
+                    <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                </div>
+                <span class="text-[10px] font-semibold text-anthracite">Konum</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-20 md:bottom-8 right-4 md:right-8 w-12 h-12 rounded-full bg-gradient-to-br from-champagne to-rose-gold text-white shadow-lg shadow-champagne/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 80) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (currentScroll > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Back to top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        function closeMobileMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+
+        // Testimonial slider
+        const track = document.getElementById('testimonialTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        let slidesPerView = 3;
+
+        function updateSlidesPerView() {
+            if (window.innerWidth < 768) {
+                slidesPerView = 1;
+            } else if (window.innerWidth < 1024) {
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 3;
+            }
+        }
+
+        function getTotalSlides() {
+            return track.children.length;
+        }
+
+        function getMaxSlide() {
+            return Math.max(0, getTotalSlides() - slidesPerView);
+        }
+
+        function updateSlider() {
+            updateSlidesPerView();
+            const slideWidth = 100 / slidesPerView;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.remove('bg-rose-powder');
+                    dot.classList.add('bg-champagne', 'w-6');
+                } else {
+                    dot.classList.add('bg-rose-powder');
+                    dot.classList.remove('bg-champagne', 'w-6');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = Math.max(0, currentSlide - 1);
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = Math.min(getMaxSlide(), currentSlide + 1);
+            updateSlider();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.dataset.index);
+                if (currentSlide > getMaxSlide()) currentSlide = getMaxSlide();
+                updateSlider();
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (currentSlide > getMaxSlide()) currentSlide = getMaxSlide();
+            updateSlider();
+        });
+
+        // Auto-slide
+        let autoSlide = setInterval(() => {
+            currentSlide = currentSlide >= getMaxSlide() ? 0 : currentSlide + 1;
+            updateSlider();
+        }, 5000);
+
+        // Pause on hover
+        track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        track.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(() => {
+                currentSlide = currentSlide >= getMaxSlide() ? 0 : currentSlide + 1;
+                updateSlider();
+            }, 5000);
+        });
+
+        // Scroll reveal animation
+        const revealSections = document.querySelectorAll('.reveal-section');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealSections.forEach(section => {
+            revealObserver.observe(section);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Touch swipe for testimonial slider
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    currentSlide = Math.min(getMaxSlide(), currentSlide + 1);
+                } else {
+                    currentSlide = Math.max(0, currentSlide - 1);
+                }
+                updateSlider();
+            }
+        }, { passive: true });
+
+        // Initialize
+        updateSlider();
+    </script>
+</body>
+</html>
